@@ -35,17 +35,14 @@ spec:
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata: 
-   name: autoscalingpod1
+   name: todoapp
    labels:
-     app: autoscalingpod1
+     app: todoapp
 spec:
   scaleTargetRef:
      apiVersion: apps/v1
      kind: Deployment 
-     metadata:
-        name: todoapp  
-        labels: 
-          app: todoapp
+     name: todoapp
   minReplicas: 1
   maxReplicas: 2
   metrics:
